@@ -11,7 +11,7 @@
   height: 100%;
   width: 100%;
   padding: 10px;
-  width: 210px;
+  width: 211px;
   background-color: white;
   border-radius: 5px;
   margin: 5px;
@@ -45,6 +45,9 @@
 }
 
 .RecipeCard__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   font-size: 22px;
   color: black;

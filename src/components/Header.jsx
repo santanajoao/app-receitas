@@ -20,16 +20,25 @@ export default function Header({ informUpdate }) {
     informUpdate('searchKeyword');
   };
 
+  const renderInitialRecipes = () => {
+    localStorage.setItem('searchKeyword', '');
+    setSearchKeyword('');
+    informUpdate('searchKeyword');
+  }
+
   return (
     <div className="Header">
       <div className="Header__logo-n-title">
-        <Link to="/">
+        <button
+          type="button"
+          onClick={renderInitialRecipes} className="logo-btn"
+        >
           <img
             src={recipeBookImage}
             className="Header__logo"
             alt="Livro de receitas"
           />
-        </Link>
+        </button>
         <h1 className="Header__title">Site de Receitas</h1>
       </div>
       <form onSubmit={handleSearchSubmit} className="Header__form">

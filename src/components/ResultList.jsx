@@ -8,7 +8,7 @@ export default function ResultList({ searchResult }) {
       <h2 className="ResultList__title">Explore ou busque nossas receitas!</h2>
       <ul className="ResultList">
         {searchResult.map((recipeInfos) => (
-          <RecipeCard recipeInfos={recipeInfos} />
+          <RecipeCard key={recipeInfos.idMeal} recipeInfos={recipeInfos} />
         ))}
       </ul>
     </>

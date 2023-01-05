@@ -18,11 +18,14 @@ export default function SearchPage() {
   }, [searchKeyword])
 
   const handleSearch = async () => {
+    setSearchData((prevState) => ({ ...prevState, isLoading: true }));
+
     const endpoint = (
       `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchKeyword}`
     );
     const response = await fetch(endpoint);
     const { meals } = await response.json();
+    
     setSearchData((prevState) => ({
       ...prevState,
       searchResult: meals,
@@ -35,7 +38,6 @@ export default function SearchPage() {
     setSearchData((prevState) => ({
       ...prevState,
       [storageName]: value,
-      isLoading: true,
     }));
   };
 
