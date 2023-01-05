@@ -62,3 +62,9 @@
   height: 100%;
   width: 100%;
 }
+
+.logo-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
