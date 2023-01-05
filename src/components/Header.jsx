@@ -5,8 +5,7 @@ import recipeBookImage from '../assets/recipe-book.png';
 import searchImage from '../assets/search.png';
 import '../styles/Header.css';
 
-export default function Header(props) {
-  const { informUpdate } = props;
+export default function Header({ informUpdate }) {
   const [searchKeyword, setSearchKeyword] = useState('');
 
   const handleInputChange = ({ target }) => {

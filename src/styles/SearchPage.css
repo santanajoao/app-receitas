@@ -1,0 +1,13 @@
+.SearchPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.SearchPage__main {
+  background-color: #e82f3e;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+}

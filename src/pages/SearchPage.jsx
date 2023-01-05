@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Messages from '../components/Messages';
 import ResultList from '../components/ResultList';
+import '../styles/SearchPage.css';
 
 export default function SearchPage() {
   const [searchData, setSearchData] = useState({
@@ -38,12 +39,10 @@ export default function SearchPage() {
     }));
   };
 
-  //refazer lógica da renderização
-
   return (
     <div className="SearchPage">
       <Header informUpdate={updateFromStorage} />
-      <main>
+      <main className="SearchPage__main">
         { isLoading || searchResult === null ? (
           <Messages isLoading={isLoading} />
         ) : (

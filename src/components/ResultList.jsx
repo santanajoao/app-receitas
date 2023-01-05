@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import RecipeCard from './RecipeCard';
+import '../styles/ResultList.css';
 
-export default function ResultList(props) { 
-  const { searchResult } = props; 
+export default function ResultList({ searchResult }) { 
   return (
-    <ul className="ResultList">
-      {searchResult.map((item) => (
-        <li>Teste</li>
-      ))}
-    </ul>
+    <>
+      <h2 className="ResultList__title">Explore ou busque nossas receitas!</h2>
+      <ul className="ResultList">
+        {searchResult.map((recipeInfos) => (
+          <RecipeCard recipeInfos={recipeInfos} />
+        ))}
+      </ul>
+    </>
   );
 }
