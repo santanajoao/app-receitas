@@ -42,7 +42,7 @@
 }
 
 .search-input:focus {
-  outline: 1px solid black;
+  outline: 2px solid rgba(128, 128, 128, 0.6);
   position: relative;
 }
 

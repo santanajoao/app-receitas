@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import recipeBookImage from '../assets/recipe-book.png';
 import searchImage from '../assets/search.png';
 import '../styles/Header.css';
 
-export default function Header() {
-  const [searchValue, setSearchValue] = useState('');
+export default function Header(props) {
+  const { informUpdate } = props;
+  const [searchKeyword, setSearchKeyword] = useState('');
 
   const handleInputChange = ({ target }) => {
     const { value } = target;
-    setSearchValue(value);
+    setSearchKeyword(value);
   };
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('recipeSearch', JSON.stringify(searchValue));
-    setSearchValue('');
+    localStorage.setItem('searchKeyword', searchKeyword);
+    setSearchKeyword('');
+    informUpdate('searchKeyword');
   };
 
   return (
@@ -32,11 +35,11 @@ export default function Header() {
       </div>
       <form onSubmit={handleSearchSubmit} className="Header__form">
         <input
-          value={searchValue}
+          value={searchKeyword}
           type="text"
           placeholder="Encontre sua receita"
           onChange={handleInputChange}
-          name="searchValue"
+          name="searchKeyword"
           className="search-input"
         />
         <button type="submit" className="search-btn">
@@ -50,3 +53,7 @@ export default function Header() {
     </div>
   );
 }
+
+Header.propTypes = {
+  informUpdate: PropTypes.func.isRequired,
+};
