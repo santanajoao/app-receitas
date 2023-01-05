@@ -21,6 +21,7 @@
   height: 193px;
   align-self: center;
   border-radius: 5px 5px 0 0;
+  background-color: lightblue;
 }
 
 .RecipeCard__category {

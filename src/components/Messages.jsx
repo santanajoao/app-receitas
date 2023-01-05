@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/Messages.css';
 
 export default function Messages({ isLoading }) {
   if (isLoading) {
