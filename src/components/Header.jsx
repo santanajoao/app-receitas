@@ -15,7 +15,9 @@ export default function Header({ history }) {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    history.push(`/search/${searchKeyword}`);
+    if (searchKeyword.replace(/ /g, '')) {
+      history.push(`/search/${searchKeyword}`);
+    }
   };
 
   return (

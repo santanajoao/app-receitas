@@ -5,29 +5,30 @@ import Messages from '../components/Messages';
 import ResultList from '../components/ResultList';
 import '../styles/SearchPage.css';
 
-export default function SearchPage({ history }) {
+export default function SearchPage({ match, history }) {
   const [searchData, setSearchData] = useState({
-    searchKeyword: '',
     searchResult: [],
     isLoading: true,
   });
 
-  const { isLoading, searchResult, searchKeyword } = searchData;
+  const { isLoading, searchResult } = searchData;
+  const { keyword } = match.params;
+  
 
   useEffect(() => {
     handleSearch();
-  }, [searchKeyword])
+  }, [keyword])
 
   const handleSearch = async () => {
+
     setSearchData((prevState) => ({ ...prevState, isLoading: true }));
 
-    const meals = await fetchByRecipeName(searchKeyword);
+    const meals = await fetchByRecipeName(keyword);
 
-    setSearchData((prevState) => ({
-      ...prevState,
+    setSearchData({
       searchResult: meals,
       isLoading: false,
-    }));
+    });
   };
 
   return (
