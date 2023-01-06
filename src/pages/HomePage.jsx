@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header'
+import PropTypes from 'prop-types';
 import { fetchRandomRecipe } from '../utils/requestAPI';
+import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
 import recipeBook from '../assets/open-recipe-book.png';
 import '../styles/HomePage.css';
@@ -42,12 +43,21 @@ export default function HomePage({ history }) {
           { randomRecipes.length > 0 && (
             <ul className="random-recipes-list">
               {randomRecipes.map((recipeInfos) => (
-                <RecipeCard recipeInfos={recipeInfos} />
+                <RecipeCard
+                  key={recipeInfos.idMeal}
+                  recipeInfos={recipeInfos}
+                />
               ))}
             </ul>
           ) }
         </section>
       </main>
     </div>
-  )
+  );
 }
+
+HomePage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+};

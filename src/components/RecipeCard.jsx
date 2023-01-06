@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../styles/RecipeCard.css';
 
 export default function RecipeCard({ recipeInfos }) {
@@ -18,3 +19,12 @@ export default function RecipeCard({ recipeInfos }) {
     </li>
   );
 }
+
+RecipeCard.propTypes = {
+  recipeInfos: PropTypes.shape({
+    idMeal: PropTypes.string,
+    strMeal: PropTypes.string,
+    strCategory: PropTypes.string,
+    strMealThumb: PropTypes.string,
+  }).isRequired,
+};

@@ -1,5 +1,6 @@
 import React from 'react';
 import RecipeCard from './RecipeCard';
+import PropTypes from 'prop-types';
 import '../styles/ResultList.css';
 
 export default function ResultList({ searchResult }) { 
@@ -14,3 +15,11 @@ export default function ResultList({ searchResult }) {
     </>
   );
 }
+
+ResultList.propTypes = {
+  searchResult: PropTypes.arrayOf(
+    PropTypes.shape({
+      idMeal: PropTypes.string,
+    }),
+  ).isRequired,
+};

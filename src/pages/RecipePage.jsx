@@ -11,7 +11,9 @@ export default function RecipePage({ match, history }) {
   return (
     <div className="RecipePage">
       <Header history={history} />
-      {id}
+      <main className="RecipePage__main">
+
+      </main>
     </div>
   );
 }

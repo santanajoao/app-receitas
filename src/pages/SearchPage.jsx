@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { fetchByRecipeName } from '../utils/requestAPI';
 import Header from '../components/Header';
 import Messages from '../components/Messages';
@@ -17,7 +18,7 @@ export default function SearchPage({ match, history }) {
 
   useEffect(() => {
     handleSearch();
-  }, [keyword])
+  }, [keyword]);
 
   const handleSearch = async () => {
 
@@ -44,3 +45,14 @@ export default function SearchPage({ match, history }) {
     </div>
   );
 }
+
+SearchPage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      keyword: PropTypes.string,
+    }),
+  }).isRequired,
+};
