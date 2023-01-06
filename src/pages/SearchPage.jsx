@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { fetchByRecipeName } from '../utils/requestAPI';
 import Header from '../components/Header';
 import Messages from '../components/Messages';
 import ResultList from '../components/ResultList';
 import '../styles/SearchPage.css';
 
-export default function SearchPage() {
+export default function SearchPage({ history }) {
   const [searchData, setSearchData] = useState({
     searchKeyword: '',
     searchResult: [],
@@ -20,12 +21,8 @@ export default function SearchPage() {
   const handleSearch = async () => {
     setSearchData((prevState) => ({ ...prevState, isLoading: true }));
 
-    const endpoint = (
-      `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchKeyword}`
-    );
-    const response = await fetch(endpoint);
-    const { meals } = await response.json();
-    
+    const meals = await fetchByRecipeName(searchKeyword);
+
     setSearchData((prevState) => ({
       ...prevState,
       searchResult: meals,
@@ -33,17 +30,9 @@ export default function SearchPage() {
     }));
   };
 
-  const updateFromStorage = (storageName) => {
-    const value = localStorage.getItem(storageName);
-    setSearchData((prevState) => ({
-      ...prevState,
-      [storageName]: value,
-    }));
-  };
-
   return (
     <div className="SearchPage">
-      <Header informUpdate={updateFromStorage} />
+      <Header history={history} />
       <main className="SearchPage__main">
         { isLoading || searchResult === null ? (
           <Messages isLoading={isLoading} />

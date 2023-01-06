@@ -5,7 +5,7 @@ import recipeBookImage from '../assets/recipe-book.png';
 import searchImage from '../assets/search.png';
 import '../styles/Header.css';
 
-export default function Header({ informUpdate }) {
+export default function Header({ history }) {
   const [searchKeyword, setSearchKeyword] = useState('');
 
   const handleInputChange = ({ target }) => {
@@ -15,30 +15,19 @@ export default function Header({ informUpdate }) {
 
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('searchKeyword', searchKeyword);
-    setSearchKeyword('');
-    informUpdate('searchKeyword');
+    history.push(`/search/${searchKeyword}`);
   };
-
-  const renderInitialRecipes = () => {
-    localStorage.setItem('searchKeyword', '');
-    setSearchKeyword('');
-    informUpdate('searchKeyword');
-  }
 
   return (
     <div className="Header">
       <div className="Header__logo-n-title">
-        <button
-          type="button"
-          onClick={renderInitialRecipes} className="logo-btn"
-        >
+        <Link to="/">
           <img
             src={recipeBookImage}
             className="Header__logo"
             alt="Livro de receitas"
           />
-        </button>
+        </Link>
         <h1 className="Header__title">Site de Receitas</h1>
       </div>
       <form onSubmit={handleSearchSubmit} className="Header__form">
@@ -63,5 +52,7 @@ export default function Header({ informUpdate }) {
 }
 
 Header.propTypes = {
-  informUpdate: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
 };
