@@ -45,7 +45,6 @@
 }
 
 .RecipePage__picture-n-ingredients {
-  justify-content: center;
   display: flex;
   align-items: center;
   margin-bottom: 40px;
@@ -60,6 +59,14 @@
 
 .RecipePage__ingredients-list {
   padding-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-height: 190px;
+}
+
+.RecipePage__ingredients-list li {
+  margin-right: 50px;
 }
 
 .RecipePage__instructions {
