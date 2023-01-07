@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
 import recipeBook from '../assets/open-recipe-book.png';
 import '../styles/HomePage.css';
+import Loading from '../components/Loading';
 
 export default function HomePage({ history }) {
   const [randomRecipes, setRandomRecipes] = useState([]);
@@ -40,7 +41,7 @@ export default function HomePage({ history }) {
             Receitas que você talvez se interesse:
           </h2>
 
-          { randomRecipes.length > 0 && (
+          { randomRecipes.length > 0 ? (
             <ul className="random-recipes-list">
               {randomRecipes.map((recipeInfos) => (
                 <RecipeCard
@@ -49,6 +50,8 @@ export default function HomePage({ history }) {
                 />
               ))}
             </ul>
+          ) : (
+            <Loading />
           ) }
         </section>
       </main>

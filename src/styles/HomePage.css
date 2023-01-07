@@ -10,6 +10,7 @@
   background-position-y: bottom;
   background-color: black;
   display: flex;
+  flex-wrap: wrap;
   flex-grow: 1;
   align-items: center;
   justify-content: space-around;
@@ -19,9 +20,14 @@
 
 .HomePage__left,
 .HomePage__right {
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.HomePage__right {
+  min-height: 380px;
 }
 
 .HomePage__title {
