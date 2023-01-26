@@ -1,0 +1,7 @@
+.loading,
+.search-not-found {
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: sans-serif;
+}

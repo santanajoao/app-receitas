@@ -1,0 +1,16 @@
+.RecipePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e82f3e;
+  min-height: 100vh;
+}
+
+.RecipePage__main {
+  padding: 40px 65px 30px;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  flex-grow: 1;
+  background-color: white;
+}

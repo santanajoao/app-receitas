@@ -1,0 +1,18 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Loading {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.Loading__icon {
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}

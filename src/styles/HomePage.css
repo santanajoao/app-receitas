@@ -1,0 +1,57 @@
+.HomePage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.HomePage__main {
+  background-image: url('../assets/home-bg.jpg');
+  background-size: cover;
+  background-position-y: bottom;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  z-index: 1;
+}
+
+.HomePage__left,
+.HomePage__right {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.HomePage__right {
+  min-height: 380px;
+}
+
+.HomePage__title {
+  color: white;
+  font-family: sans-serif;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.HomePage__img {
+  width: 75%;
+}
+
+.img-wrapper {
+  background-color: white;
+  width: 80%;
+  height: 50%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 2px 5px 2px rgb(0, 0, 0, 0.2);
+}
+
+.random-recipes-list {
+  display: flex;
+}

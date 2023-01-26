@@ -1,0 +1,13 @@
+.ResultList {
+  display: flex;
+  flex-flow: row wrap;
+  width: 95%;
+  justify-content: center;
+}
+
+.ResultList__title {
+  color: white;
+  font-family: sans-serif;
+  font-size: 24px;
+  margin: 20px 0 15px;
+}
