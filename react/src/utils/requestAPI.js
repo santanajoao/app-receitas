@@ -1,16 +1,12 @@
 const fetchByRecipeName = async (recipeName) => {
-  const endpoint = (
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`
-  );
+  const endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
   const response = await fetch(endpoint);
   const { meals } = await response.json();
   return meals;
 };
 
 const fetchByRecipeID = async (recipeID) => {
-  const endpoint = (
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeID}`
-  );
+  const endpoint = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeID}`;
   const response = await fetch(endpoint);
   const { meals } = await response.json();
   const recipe = meals[0];
@@ -36,20 +32,23 @@ const getIgredients = (recipeObj) => {
     const measure = recipeObj[`strMeasure${counter}`];
 
     if (ingredient === '') break;
-    
+
     ingredients.push(`${measure} - ${ingredient}`);
   }
   return ingredients;
 };
 
 const getUsefulInfos = (recipeObj) => {
-  const {
-    idMeal, strMeal, strCategory, strInstructions, strMealThumb,
-  } = recipeObj;
+  const { idMeal, strMeal, strCategory, strInstructions, strMealThumb } =
+    recipeObj;
 
-  return ({
-    idMeal, strMeal, strCategory, strInstructions, strMealThumb,
-  });
+  return {
+    idMeal,
+    strMeal,
+    strCategory,
+    strInstructions,
+    strMealThumb,
+  };
 };
 
 export { fetchByRecipeName, fetchRandomRecipe, fetchByRecipeID };

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receitas</title>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header__logo-and-title">
+      <button class="header-logo-btn">
+        <img src="./src/images/recipe.png" class="header__logo" alt="Logo livro de receitas">
+      </button>
+      <h1 class="header__title">Site de Receitas</h1>
+    </div>
+    <div class="header__input-and-btn">
+      <input type="text" required placeholder="Encontre sua receita" class="header__search">
+      <button type="button" class="search-btn">
+        <img src="./src/images/search.png" class="search-btn__img" alt="Imagem de lupa do botão de pesquisa">
+      </button>
+    </div>
+  </header>
+  <main>
+    <section class="recipes">
+      <h2 class="main__title"></h2>
+      <ul class="recipe-list"></ul>
+    </section>
+    <section class="recipe-infos">
+      <section class="recipe-infos__btn-and-title">
+        <button class="get-back-btn">
+          <img src="./src/images/arrow.png" class="get-back-btn__img" alt="">
+        </button>
+        <h1 class="recipe-infos__title"></h1>
+      </section>
+      <section class="recipe-infos__img-and-ingredients">
+        <img src="" class="recipe-infos__img" alt="">
+        <div class="recipe-infos__ingredients">
+          <h2 class="recipe-infos__ingredients-title">Ingredientes</h2>
+          <ul class="recipe-infos__ingredients-list"></ul>
+        </div>
+      </section>
+      <h2 class="recipe-infos__instructions-title">Como preparar</h2>
+      <p class="recipe-infos__instructions"></p>
+    </section>
+  </main>
+  <script src="./src/main.js" type="module"></script>
+</body>
+</html>
