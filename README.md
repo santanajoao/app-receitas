@@ -7,10 +7,18 @@ Uma aplicação de busca de receitas da API TheMealDB feita com o objetivo de pr
 - ### [Versão React](https://busca-receitas-react-jpsc.surge.sh/)
 
 ## Tecnologias Utilizadas
+
+### Versão React
+
 - React Router
 - ReactJS
 - CSS
 - API TheMealDB
+
+### Versão sem react
+- HTML
+- CSS
+- JavaScript
 
 ## Funcionalidades
 - A página inicial contém duas receitas aleatórias
