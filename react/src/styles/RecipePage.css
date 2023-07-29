@@ -7,10 +7,19 @@
 }
 
 .RecipePage__main {
-  padding: 40px 65px 30px;
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 100%;
   flex-grow: 1;
   background-color: white;
+
+  padding: 20px 10px 30px;
+}
+
+@media screen and (min-width: 800px) {
+  .RecipePage__main {
+    width: 85%;
+
+    padding: 40px 65px 30px;
+  }
 }

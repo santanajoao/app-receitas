@@ -9,14 +9,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 100%;
-  padding: 10px;
-  width: 211px;
+  padding: 8px 8px 15px;
   background-color: white;
   border-radius: 5px;
   margin: 5px;
   box-shadow: 2px 2px 5px #0000004d;
-  max-height: 302px;
+  max-height: 360px;
 }
 
 .RecipeCard__Link:hover {
@@ -25,8 +23,8 @@
 }
 
 .RecipeCard__picture {
-  width: 193px;
-  height: 193px;
+  width: 250px;
+  height: 250px;
   align-self: center;
   border-radius: 5px 5px 0 0;
   background-color: lightblue;
@@ -53,4 +51,20 @@
   color: black;
   font-weight: 700;
   font-family: sans-serif;
+  max-width: 250px;
+}
+
+@media screen and (min-width: 550px) {
+  .RecipeCard__Link {
+    max-height: 302px;
+  }
+
+  .RecipeCard__picture {
+    width: 193px;
+    height: 193px;
+  }
+
+  .RecipeCard__title {
+    max-width: 193px;
+  }
 }
